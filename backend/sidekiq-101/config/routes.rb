@@ -11,4 +11,9 @@ Rails.application.routes.draw do
 
   get '/sidekiq_demo/get-json', to: 'sidekiq_demo#json'
   resources :sidekiq_demo
+
+  get '/truths', to: 'truths#index'
+  post '/truths', to: 'truths#create'
+  post '/truths/import', to: 'truths#import'
+  post '/truths/import-async', to: 'truths#import_async'
 end
