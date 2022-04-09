@@ -4,5 +4,10 @@ up:
 down:
 	docker-compose down
 
-restart:
-	down && up
+rails_console:
+	docker-compose run  web bin/rails console
+
+web_sh:
+	docker-compose exec web /bin/bash
+
+restart: down up

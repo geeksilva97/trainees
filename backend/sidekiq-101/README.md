@@ -25,3 +25,6 @@ Things you may want to cover:
 
 # Dockerize application
 - https://docs.docker.com/samples/rails/
+- Configure web ui for API - https://github.com/mperham/sidekiq/wiki/Monitoring#rack-session-and-protection-against-web-attacks
+- Config Redis - https://github.com/mperham/sidekiq/wiki/Using-Redis 
+- Docker commands - https://blog.eq8.eu/til/how-to-lunch-rails-console-in-specific-docker-container.html
