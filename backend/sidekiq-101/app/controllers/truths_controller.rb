@@ -1,0 +1,2 @@
+class TruthsController < ApplicationController
+end
