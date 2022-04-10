@@ -10,14 +10,14 @@ class TruthsController < ApplicationController
 
   def import
     saved_truths = []
-    params[:truths].map do |t|
+    truths_import_params[:truths].map do |t|
       new_truth = Truth.new(question: t[:question], answer: t[:answer])
       new_truth.save
       saved_truths.push new_truth
     end
 
     render json: saved_truths
-    # render json: truths.map { | truth | Truth.new(question: truth[:question], answer: truth[:answer]).save }
+    # render json: truths_import_params
   end
 
   def import_async
@@ -30,6 +30,10 @@ class TruthsController < ApplicationController
   end
 
   private
+
+  def truths_import_params
+    params.permit(truths: [:question, :answer])
+  end
 
   def truth_params
     params.require(:truth).permit(:question, :answer)
